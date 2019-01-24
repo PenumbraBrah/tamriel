@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="A front-end template that helps you build fast, modern mobile web apps." name="description">
+  <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
+  <style>
+body {
+  background-color: #1e2a2d;
+  color: #c0d3c5;
+  font-family: sans-serif;
+}
+
+.well {
+  border-left: 6px solid #feca13;
+  padding-left: 12px;
+  margin-left: 12px;
+  margin-bottom: 12px;
+}
+
+h2, h4 {
+  color: #c0d3c5;
+  padding: unset;
+  margin: unset;
+  border-right: 6px solid #1ce;
+  margin-right: 12px;
+  padding-right: 12px;
+}
+
+.content {
+  display: inline-block;
+}
+
+.highlight {
+  color: #feca1e;
+}
+.ingred {
+  margin: unset;
+  padding: unset;
+  border-bottom: 6px solid #de1e4e;
+  padding-bottom: 8px;
+}
+
+.duo {
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+.details {
+  color: #7FC5C3;
+  font-weight: bold;
+}
+  </style>
+<script>
+function filter() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("filterInp");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("alchemy");
+  tr = table.getElementsByClassName("well");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    txtValue = tr[i].textContent || tr[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      tr[i].style.display = "";
+    } else {
+      tr[i].style.display = "none";
+    }
+  }
+}
+
+</script>
+</head>
+<body>
+
+<input id="filterInp" placeholder="filter" onkeyup="filter()"/>
+<div></div> <!-- necessary div -->
+<div class="content" id="alchemy">
+  <h1>general</h1>
+  <div class="well">
+    <h4>fortify health & restore health</h4>
+    <p class="ingred">blue mountain flower + wheat</p>
+  </div>
+  <div class="well">
+    <h4>fortify health & restore health & restore stamina</h4>
+    <p class="ingred">bear claws + charred skeever hide + wheat</p>
+  </div>
+  <div class="well">
+    <h4>regenerate health & regenerate magicka</h4>
+    <p class="ingred">garlic + namira's rot + salt pile</p>
+  </div>
+  <div class="well">
+    <h4>resist fire & resist frost & resist shock</h4>
+    <p class="ingred">fly amantia + hawk beak + snowberries</p>
+  </div>
+  <div class="well">
+    <h4>resist fire & resist frost & resist poison</h4>
+    <p class="ingred">mudcrab chitin + snowberries + thistle branch</p>
+  </div>
+  <div class="well">
+    <h4>cure disease & restore health & restore stamina</h4>
+    <p class="ingred">charred skeever hide + eye of sabre cat + hawk feathers</p>
+  </div>
+  <div class="well">
+    <h4>cure disease & restore health & restore stamina & resist poison</h4>
+    <p class="ingred">charred skeever hide + eye of sabre cat + mudcrab chitin</p>
+  </div>
+  <div class="well">
+    <h4>regenerate health & invisibility</h4>
+    <p class="ingred">luna moth wing + vampire dust</p>
+  </div>
+  <div class="well">
+    <h4>resist magic & invisibility</h4>
+    <p class="ingred">luna moth wing + nirnroot + tundra cotton</p>
+  </div>
+  <h1>mages</h1>
+  <div class="well">
+    <h4>fortify magicka & regenerate magicka & restore magicka</h4>
+    <p class="ingred">jazbay grapes + moon sugar + red mountain flower</p>
+  </div>
+  <div class="well">
+    <h4>fortify magicka & restore magicka</h4>
+    <p class="duo">briar heart + red mountain flower</p>
+    <p class="ingred"><span class="details">or </span><span>creep cluster + red mountain flower + tundra cotton</span></p>
+  </div>
+  <h1>archers</h1>
+  <div class="well">
+    <h4>fortify marksman</h4>
+    <p class="ingred"><span class="details">any of: </span><span>canis root, elves ear, juniper berries, spider egg</span></p>
+  </div>
+  <h1>thieves</h1>
+  <div class="well">
+    <h4>fortify pickpocket</h4>
+    <p class="ingred"><span class="details">any of: </span><span>blue dartwing, nordic barnacle, orange dartwing, slaughterfish egg</span></p>
+  </div>
+  <div class="well">
+    <h4>fortify lockpicking</h4>
+    <p class="ingred"><span class="details">any of: </span><span>ashen grass pod, falmer ear, namira's rot, pine thrush egg, spider egg</span></p>
+  </div>
+  <div class="well">
+    <h4>fortify one-handed & fortify sneak & resist frost & restore stamina</h4>
+    <p class="ingred">hawk feathers + purple mountain flower + small pearl</p>
+  </div>
+  <div class="well">
+    <h4>fortify destruction & fortify sneak & restore magicka</h4>
+    <p class="ingred">beehive husk + ectoplasm + human flesh</p>
+  </div>
+  <div class="well">
+    <h4>fortify sneak & resist frost & restore stamina</h4>
+    <p class="ingred">frost miriam + purple mountain flower + silverside perch</p>
+  </div>
+  <h1>poisons</h1>
+  <div class="well">
+    <h4>damage health & ravage health & weakness to poison</h4>
+    <p class="ingred">deathbell + giant lichen + skeever tail</p>
+  </div>
+  <div class="well">
+    <h4>damage health & ravage health</h4>
+    <p class="ingred">crimson nirnroot + giant lichen + skeever tail</p>
+  </div>
+  <div class="well">
+    <h4>damage health & lingering damage health</h4>
+    <p class="duo">crimson nirnroot + imp stool + mora tapinella</p>
+    <p class="ingred"><span class="details">or </span><span>imp stool + orange dartwing + river betty</span></p>
+  </div>
+  <div class="well">
+    <h4>damage health & lingering damage health & paralyze</h4>
+    <p class="duo">human flesh + imp stool + slaughterfish egg</p>
+    <p class="ingred"><span class="details">or </span><span>human flesh + imp stool + scrathecraw</span></p>
+  </div>
+  <div class="well">
+    <h4>damage health & slow</h4>
+    <p class="ingred">deathbell + river betty + salt pile</p>
+  </div>
+  <div class="well">
+    <h4>damage health & slow & weakness to poison</h4>
+    <p class="ingred">deathbell + pine thrush egg + river betty</p>
+  </div>
+  <div class="well">
+    <h4>lingering damage health & ravage health & damage health</h4>
+    <p class="ingred">imp stool + scathecraw + skeever tail</p>
+  </div>
+  <div class="well">
+    <h4>lingering damage health & paralyze</h4>
+    <p class="duo">canis root + imp stool +</p>
+    <p class="ingred"><span class="details">any of: </span><span>orange dartwing, mora tapinella, scathecraw</span></p>
+  </div>
+</div>
+</body>
+</html>
