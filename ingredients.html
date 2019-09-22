@@ -44,8 +44,8 @@ th {
 							td[j].classList.remove("highlight");
 							td[j].classList.remove("highlight2");
 							txtValue = td[j].textContent || td[j].innerText;
-							if (txtValue.toUpperCase().indexOf(filter) > -1
-								|| txtValue.toUpperCase().indexOf(filter2) > -1) {
+							if (txtValue.toUpperCase().includes(filter)
+								|| (filter2.length > 0 && filter2 != "" && txtValue.toUpperCase().includes(filter2))) {
 								tr[i].style.display = "";
 								if (txtValue.toUpperCase().indexOf(filter) > -1) {
 									if (filter.length > 0 && filter != "") {
