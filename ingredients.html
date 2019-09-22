@@ -1,1243 +1,1223 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="A front-end template that helps you build fast, modern mobile web apps." name="description">
-  <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
-  <style>
+	<head>
+		<meta charset="utf-8">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta content="A front-end template that helps you build fast, modern mobile web apps." name="description">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport">
+		<style>
 body {
-  background-color: #1e2a2d;
-  color: #c0d3c5;
-  font-family: sans-serif;
+	background-color: #1e2a2d;
+	color: #c0d3c5;
+	font-family: sans-serif;
 }
 
 th {
-  text-align: left;
+	text-align: left;
 }
 .highlight {
-  background-color: #feca1e;
-  color: #1a1a1a;
+	background-color: #feca1e;
+	color: #1a1a1a;
 }
 .highlight2 {
-  background-color: #de1e4e;
-  color: #1a1a1a;
+	background-color: #de1e4e;
+	color: #1a1a1a;
 }
-  </style>
-<script>
-  function filter() {
-    // Declare variables
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("filterInp");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("alchemy");
-    tr = table.getElementsByTagName("tr");
+		</style>
+		<script>
+			function filter() {
+				// Declare variables
+				var input, filter, table, tr, td, i, txtValue;
+				input = document.getElementById("filterInp");
+				input2 = document.getElementById("filterInp2");
+				filter = input.value.toUpperCase();
+				filter2 = input2.value.toUpperCase();
+				table = document.getElementById("alchemy");
+				tr = table.getElementsByTagName("tr");
 
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td");
-      k = true;
-      for (j = 0; j < td.length; j++) {
-        if (td[j]) {
-          td[j].classList.remove("highlight");
-          td[j].classList.remove("highlight2");
-          txtValue = td[j].textContent || td[j].innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-            if (filter.length > 0 && filter != "") {
-              td[j].classList.add("highlight");
-            }
-            k = false;
-          } else if (k) {
-            //if (!td[j].classList.contains("highlight2") && !td[j].classList.contains("highlight")) {
-	      tr[i].style.display = "none";
-	    //}
-            td[j].classList.remove("highlight");
-          }
-        }
-      }
-    }
-  }
-  function filter2() {
-    // Declare variables
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("filterInp2");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("alchemy");
-    tr = table.getElementsByTagName("tr");
-
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td");
-      k = true;
-      for (j = 0; j < td.length; j++) {
-        if (td[j]) {
-          td[j].classList.remove("highlight2");
-          txtValue = td[j].textContent || td[j].innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-            if (filter.length > 0 && filter != "") {
-              td[j].classList.add("highlight2");
-            }
-            k = false;
-          } else if (k) {
-            td[j].classList.remove("highlight2");
-          }
-        }
-      }
-    }
-  }
-</script>
-</head>
-<body>
-<div id="ingredients">
-  <input class="search" id="filterInp" placeholder="filter" onkeyup="filter()" />
-  <input class="search" id="filterInp2" placeholder="secondary filter" onkeyup="filter2()" />
-  <table id="alchemy" cellpadding="8pt">
-    <thead>
-      <tr>
-        <th class="headersort" title="sort ascending">ingredient
-          <div><span class="chevron"></span><span class="chevron"></span></div>
-        </th>
-        <th class="headersort" title="sort ascending">primary effect
-          <div><span class="chevron"></span><span class="chevron"></span></div>
-        </th>
-        <th class="headersort" title="sort ascending">secondary effect
-          <div><span class="chevron"></span><span class="chevron"></span></div>
-        </th>
-        <th class="headersort" title="sort ascending">tertiary effect
-          <div><span class="chevron"></span><span class="chevron"></span></div>
-        </th>
-        <th class="headersort" title="sort ascending">quaternary effect
-          <div><span class="chevron"></span><span class="chevron"></span></div>
-        </th>
-        <th class="headersort" title="sort ascending">weight
-          <div><span class="chevron"></span><span class="chevron"></span></div>
-        </th>
-        <th class="headersort" title="sort ascending">value
-          <div><span class="chevron"></span><span class="chevron"></span></div>
-        </th>
-        <th class="headersort" title="sort ascending">obtained
-          <div><span class="chevron"></span><span class="chevron"></span></div>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="ingredientname">abecean longfin</td>
-        <td class="effect1">weakness to frost</td>
-        <td class="effect2">fortify sneak</td>
-        <td class="effect3">weakness to poison</td>
-        <td class="effect4">fortify restoration</td>
-        <td class="weight">0.5</td>
-        <td class="value">15</td>
-        <td id="coral" class="obtaining">lakes, rivers, streams, fish barrels</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">ancestor moth wing</td>
-        <td class="effect1">damage stamina</td>
-        <td class="effect2">fortify conjuration</td>
-        <td class="effect3">damage magicka regen</td>
-        <td class="effect4">fortify enchanting</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">ancestor glade</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">ash creep cluster</td>
-        <td class="effect1">damage stamina</td>
-        <td class="effect2">invisibility</td>
-        <td class="effect3">resist fire</td>
-        <td class="effect4">fortify destruction</td>
-        <td class="weight">0.3</td>
-        <td class="value">20</td>
-        <td class="obtaining">harvested from ash covered areas of solstheim</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">ash hopper jelly</td>
-        <td class="effect1">restore health</td>
-        <td class="effect2">fortify light armor</td>
-        <td class="effect3">resist shock</td>
-        <td class="effect4">weakness to frost</td>
-        <td class="weight">0.3</td>
-        <td class="value">20</td>
-        <td class="obtaining">ash hopper corpses</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">ashen grass pod</td>
-        <td class="effect1">resist fire</td>
-        <td class="effect2">weakness to shock</td>
-        <td class="effect3">fortify lockpicking</td>
-        <td class="effect4">fortify sneak</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">harvested from ash covered areas of solstheim</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">bear claws</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify health</td>
-        <td class="effect3">fortify one-handed</td>
-        <td class="effect4">damage magicka regen</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">bears</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">bee</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">ravage stamina</td>
-        <td class="effect3">regenerate stamina</td>
-        <td class="effect4">weakness to shock</td>
-        <td class="weight">0.1</td>
-        <td class="value">3</td>
-        <td class="obtaining">beehive</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">beehive husk</td>
-        <td class="effect1">resist poison</td>
-        <td class="effect2">fortify light armor</td>
-        <td class="effect3">fortify sneak</td>
-        <td class="effect4">fortify destruction</td>
-        <td class="weight">1</td>
-        <td class="value">5</td>
-        <td class="obtaining">beehive</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">berit's ashes
-          <p class="effect1"><i class="effect2">(identical to </i></p>
-        </td>
-        <td class="effect3">damage stamina</td>
-        <td class="effect4">resist fire</td>
-        <td class="weight">fortify conjuration</td>
-        <td class="value">ravage stamina</td>
-        <td class="obtaining">0.5</td>
-        <td>5</td>
-        <td>quest item given by thadgeir</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">bleeding crown</td>
-        <td class="effect1">weakness to fire</td>
-        <td class="effect2">fortify block</td>
-        <td class="effect3">weakness to poison</td>
-        <td class="effect4">resist magic</td>
-        <td class="weight">0.3</td>
-        <td class="value">10</td>
-        <td class="obtaining">mushroom clusters</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">blisterwort</td>
-        <td class="effect1">damage stamina</td>
-        <td class="effect2">frenzy</td>
-        <td class="effect3">restore health</td>
-        <td class="effect4">fortify smithing</td>
-        <td class="weight">0.2</td>
-        <td class="value">12</td>
-        <td class="obtaining">caves and dark areas</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">blue butterfly wing</td>
-        <td class="effect1">damage stamina</td>
-        <td class="effect2">fortify conjuration</td>
-        <td class="effect3">damage magicka regen</td>
-        <td class="effect4">fortify enchanting</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">blue butterfly</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">blue dartwing</td>
-        <td class="effect1">resist shock</td>
-        <td class="effect2">fortify pickpocket</td>
-        <td class="effect3">restore health</td>
-        <td class="effect4">fear</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">hovering above water</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">blue mountain flower</td>
-        <td class="effect1">restore health</td>
-        <td class="effect2">fortify conjuration</td>
-        <td class="effect3">fortify health</td>
-        <td class="effect4">damage magicka regen</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">mountain flower clumps</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">boar tusk</td>
-        <td class="effect1">fortify stamina</td>
-        <td class="effect2">fortify health</td>
-        <td class="effect3">fortify block</td>
-        <td class="effect4">frenzy</td>
-        <td class="weight">0.5</td>
-        <td class="value">20</td>
-        <td class="obtaining">tusked bristlebacks</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">bone meal</td>
-        <td class="effect1">damage stamina</td>
-        <td class="effect2">resist fire</td>
-        <td class="effect3">fortify conjuration</td>
-        <td class="effect4">ravage stamina</td>
-        <td class="weight">0.5</td>
-        <td class="value">5</td>
-        <td class="obtaining">draugr and skeletons</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">briar heart</td>
-        <td class="effect1">restore magicka</td>
-        <td class="effect2">fortify block</td>
-        <td class="effect3">paralysis</td>
-        <td class="effect4">fortify magicka</td>
-        <td class="weight">0.5</td>
-        <td class="value">20</td>
-        <td class="obtaining">forsworn leaders</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">burnt spriggan wood</td>
-        <td class="effect1">weakness to fire</td>
-        <td class="effect2">fortify alteration</td>
-        <td class="effect3">damage magicka regen</td>
-        <td class="effect4">slow</td>
-        <td class="weight">0.5</td>
-        <td class="value">20</td>
-        <td class="obtaining">burnt spriggans</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">butterfly wing</td>
-        <td class="effect1">restore health</td>
-        <td class="effect2">fortify barter</td>
-        <td class="effect3">lingering damage stamina</td>
-        <td class="effect4">damage magicka</td>
-        <td class="weight">0.1</td>
-        <td class="value">3</td>
-        <td class="obtaining">monarch butterfly</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">canis root</td>
-        <td class="effect1">damage stamina</td>
-        <td class="effect2">fortify one-handed</td>
-        <td class="effect3">fortify marksman</td>
-        <td class="effect4">paralysis</td>
-        <td class="weight">0.1</td>
-        <td class="value">5</td>
-        <td class="obtaining">near rocky areas</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">charred skeever hide</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">cure disease</td>
-        <td class="effect3">resist poison</td>
-        <td class="effect4">restore health</td>
-        <td class="weight">0.5</td>
-        <td class="value">1</td>
-        <td class="obtaining">found at campfires</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">chaurus eggs</td>
-        <td class="effect1">weakness to poison</td>
-        <td class="effect2">fortify stamina</td>
-        <td class="effect3">damage magicka</td>
-        <td class="effect4">invisibility</td>
-        <td class="weight">0.2</td>
-        <td class="value">10</td>
-        <td class="obtaining">falmer caves</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">chaurus hunter antennae</td>
-        <td class="effect1">damage stamina</td>
-        <td class="effect2">fortify conjuration</td>
-        <td class="effect3">damage magicka regen</td>
-        <td class="effect4">fortify enchanting</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">chaurus hunter, chaurus hunter fledgling</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">chicken's egg</td>
-        <td class="effect1">resist magic</td>
-        <td class="effect2">damage magicka regen</td>
-        <td class="effect3">waterbreathing</td>
-        <td class="effect4">lingering damage stamina</td>
-        <td class="weight">0.5</td>
-        <td class="value">2</td>
-        <td class="obtaining">chicken's nest</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">creep cluster</td>
-        <td class="effect1">restore magicka</td>
-        <td class="effect2">damage stamina regen</td>
-        <td class="effect3">fortify carry weight</td>
-        <td class="effect4">weakness to magic</td>
-        <td class="weight">0.2</td>
-        <td class="value">1</td>
-        <td class="obtaining">hydro-thermal areas</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">crimson nirnroot</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">damage stamina</td>
-        <td class="effect3">invisibility</td>
-        <td class="effect4">resist magic</td>
-        <td class="weight">0.2</td>
-        <td class="value">10</td>
-        <td class="obtaining">blackreach</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">cyrodilic spadetail</td>
-        <td class="effect1">damage stamina</td>
-        <td class="effect2">fortify restoration</td>
-        <td class="effect3">fear</td>
-        <td class="effect4">ravage health</td>
-        <td class="weight">0.3</td>
-        <td class="value">15</td>
-        <td class="obtaining">lakes, rivers, streams, fish barrels</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">daedra heart</td>
-        <td class="effect1">restore health</td>
-        <td class="effect2">damage stamina regen</td>
-        <td class="effect3">damage magicka</td>
-        <td class="effect4">fear</td>
-        <td class="weight">0.5</td>
-        <td class="value">250</td>
-        <td class="obtaining">daedra</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">deathbell</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">ravage stamina</td>
-        <td class="effect3">slow</td>
-        <td class="effect4">weakness to poison</td>
-        <td class="weight">0.1</td>
-        <td class="value">4</td>
-        <td class="obtaining">wild, on planters</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">dragon's tongue</td>
-        <td class="effect1">resist fire</td>
-        <td class="effect2">fortify barter</td>
-        <td class="effect3">fortify illusion</td>
-        <td class="effect4">fortify two-handed</td>
-        <td class="weight">0.1</td>
-        <td class="value">5</td>
-        <td class="obtaining">hydro-thermal areas</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">dwarven oil</td>
-        <td class="effect1">weakness to magic</td>
-        <td class="effect2">fortify illusion</td>
-        <td class="effect3">regenerate magicka</td>
-        <td class="effect4">restore magicka</td>
-        <td class="weight">0.3</td>
-        <td class="value">15</td>
-        <td class="obtaining">dwemer ruins</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">ectoplasm</td>
-        <td class="effect1">restore magicka</td>
-        <td class="effect2">fortify destruction</td>
-        <td class="effect3">fortify magicka</td>
-        <td class="effect4">damage health</td>
-        <td class="weight">0.1</td>
-        <td class="value">25</td>
-        <td class="obtaining">ghostlike creatures</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">elves ear</td>
-        <td class="effect1">restore magicka</td>
-        <td class="effect2">fortify marksman</td>
-        <td class="effect3">weakness to frost</td>
-        <td class="effect4">resist fire</td>
-        <td class="weight">0.1</td>
-        <td class="value">10</td>
-        <td class="obtaining">plant, hanging herbs</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">emperor parasol moss</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">fortify magicka</td>
-        <td class="effect3">regenerate health</td>
-        <td class="effect4">fortify two-handed</td>
-        <td class="weight">0.3</td>
-        <td class="value">1</td>
-        <td class="obtaining">hanging from emperor parasol around tel mithryn</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">eye of sabre cat</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">ravage health</td>
-        <td class="effect3">damage magicka</td>
-        <td class="effect4">restore health</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">sabre cat, snowy sabre cat</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">falmer ear</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">frenzy</td>
-        <td class="effect3">resist poison</td>
-        <td class="effect4">fortify lockpicking</td>
-        <td class="weight">0.2</td>
-        <td class="value">10</td>
-        <td class="obtaining">falmer</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">felsaad tern feathers</td>
-        <td class="effect1">restore health</td>
-        <td class="effect2">fortify light armor</td>
-        <td class="effect3">cure disease</td>
-        <td class="effect4">resist magic</td>
-        <td class="weight">0.1</td>
-        <td class="value">15</td>
-        <td class="obtaining">felsaad tern</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">fire salts</td>
-        <td class="effect1">weakness to frost</td>
-        <td class="effect2">resist fire</td>
-        <td class="effect3">restore magicka</td>
-        <td class="effect4">regenerate magicka</td>
-        <td class="weight">0.3</td>
-        <td class="value">50</td>
-        <td class="obtaining">flame atronach</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">fly amanita</td>
-        <td class="effect1">resist fire</td>
-        <td class="effect2">fortify two-handed</td>
-        <td class="effect3">frenzy</td>
-        <td class="effect4">regenerate stamina</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">mushroom clusters in and around caves</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">frost mirriam</td>
-        <td class="effect1">resist frost</td>
-        <td class="effect2">fortify sneak</td>
-        <td class="effect3">ravage magicka</td>
-        <td class="effect4">damage stamina regen</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">hanging in homes, businesses and giant camps</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">frost salts</td>
-        <td class="effect1">weakness to fire</td>
-        <td class="effect2">resist frost</td>
-        <td class="effect3">restore magicka</td>
-        <td class="effect4">fortify conjuration</td>
-        <td class="weight">0.3</td>
-        <td class="value">100</td>
-        <td class="obtaining">frost atronach</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">garlic</td>
-        <td class="effect1">resist poison</td>
-        <td class="effect2">fortify stamina</td>
-        <td class="effect3">regenerate magicka</td>
-        <td class="effect4">regenerate health</td>
-        <td class="weight">0.3</td>
-        <td class="value">1</td>
-        <td class="obtaining">hanging in homes, businesses and cooking areas</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">giant lichen</td>
-        <td class="effect1">weakness to shock</td>
-        <td class="effect2">ravage health</td>
-        <td class="effect3">weakness to poison</td>
-        <td class="effect4">restore magicka</td>
-        <td class="weight">0.3</td>
-        <td class="value">5</td>
-        <td class="obtaining">swamps</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">giant's toe</td>
-        <td class="effect1">damage stamina</td>
-        <td class="effect2">fortify health</td>
-        <td class="effect3">fortify carry weight</td>
-        <td class="effect4">damage stamina regen</td>
-        <td class="weight">1</td>
-        <td class="value">20</td>
-        <td class="obtaining">giants</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">gleamblossom</td>
-        <td class="effect1">resist magic</td>
-        <td class="effect2">fear</td>
-        <td class="effect3">regenerate health</td>
-        <td class="effect4">paralysis</td>
-        <td class="weight">0.1</td>
-        <td class="value">5</td>
-        <td class="obtaining">harvested in darkfall cave, forgotten vale</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">glow dust</td>
-        <td class="effect1">damage magicka</td>
-        <td class="effect2">damage magicka regen</td>
-        <td class="effect3">fortify destruction</td>
-        <td class="effect4">resist shock</td>
-        <td class="weight">0.5</td>
-        <td class="value">20</td>
-        <td class="obtaining">wispmother</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">glowing mushroom</td>
-        <td class="effect1">resist shock</td>
-        <td class="effect2">fortify destruction</td>
-        <td class="effect3">fortify smithing</td>
-        <td class="effect4">fortify health</td>
-        <td class="weight">0.2</td>
-        <td class="value">5</td>
-        <td class="obtaining">caves, dwemer ruins</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">grass pod</td>
-        <td class="effect1">resist poison</td>
-        <td class="effect2">ravage magicka</td>
-        <td class="effect3">fortify alteration</td>
-        <td class="effect4">restore magicka</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">tundras</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">hagraven claw</td>
-        <td class="effect1">resist magic</td>
-        <td class="effect2">lingering damage magicka</td>
-        <td class="effect3">fortify enchanting</td>
-        <td class="effect4">fortify barter</td>
-        <td class="weight">0.3</td>
-        <td class="value">20</td>
-        <td class="obtaining">hagraven</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">hagraven feathers</td>
-        <td class="effect1">damage magicka</td>
-        <td class="effect2">fortify conjuration</td>
-        <td class="effect3">frenzy</td>
-        <td class="effect4">weakness to shock</td>
-        <td class="weight">0.1</td>
-        <td class="value">20</td>
-        <td class="obtaining">hagraven</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">hanging moss</td>
-        <td class="effect1">damage magicka</td>
-        <td class="effect2">fortify health</td>
-        <td class="effect3">damage magicka regen</td>
-        <td class="effect4">fortify one-handed</td>
-        <td class="weight">0.3</td>
-        <td class="value">1</td>
-        <td class="obtaining">vegetated areas, hanging in caves, from buildings</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">hawk beak</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">resist frost</td>
-        <td class="effect3">fortify carry weight</td>
-        <td class="effect4">resist shock</td>
-        <td class="weight">0.3</td>
-        <td class="value">15</td>
-        <td class="obtaining">hawks</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">hawk feathers</td>
-        <td class="effect1">cure disease</td>
-        <td class="effect2">fortify light armor</td>
-        <td class="effect3">fortify one-handed</td>
-        <td class="effect4">fortify sneak</td>
-        <td class="weight">0.1</td>
-        <td class="value">15</td>
-        <td class="obtaining">hawks</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">hawk's egg</td>
-        <td class="effect1">resist magic</td>
-        <td class="effect2">damage magicka regen</td>
-        <td class="effect3">waterbreathing</td>
-        <td class="effect4">lingering damage stamina</td>
-        <td class="weight">0.5</td>
-        <td class="value">2</td>
-        <td class="obtaining">hawk's nest</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">histcarp</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify magicka</td>
-        <td class="effect3">damage stamina regen</td>
-        <td class="effect4">waterbreathing</td>
-        <td class="weight">0.3</td>
-        <td class="value">6</td>
-        <td class="obtaining">lakes, rivers, streams and fish barrels</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">honeycomb</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify block</td>
-        <td class="effect3">fortify light armor</td>
-        <td class="effect4">ravage stamina</td>
-        <td class="weight">1</td>
-        <td class="value">5</td>
-        <td class="obtaining">beehive</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">human flesh</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">paralysis</td>
-        <td class="effect3">restore magicka</td>
-        <td class="effect4">fortify sneak</td>
-        <td class="weight">0.3</td>
-        <td class="value">1</td>
-        <td class="obtaining">falmer vampire dens</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">human heart</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">damage magicka</td>
-        <td class="effect3">damage magicka regen</td>
-        <td class="effect4">frenzy</td>
-        <td class="weight">1</td>
-        <td class="value">0</td>
-        <td class="obtaining">falmer vampire dens</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">ice wraith teeth</td>
-        <td class="effect1">weakness to frost</td>
-        <td class="effect2">fortify heavy armor</td>
-        <td class="effect3">invisibility</td>
-        <td class="effect4">weakness to fire</td>
-        <td class="weight">0.3</td>
-        <td class="value">30</td>
-        <td class="obtaining">ice wraith</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">imp stool</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">lingering damage health</td>
-        <td class="effect3">paralysis</td>
-        <td class="effect4">restore health</td>
-        <td class="weight">0.3</td>
-        <td class="value">0</td>
-        <td class="obtaining">mushroom clusters near caves or dungeons</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">jarrin root</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">damage magicka</td>
-        <td class="effect3">damage stamina</td>
-        <td class="effect4">damage magicka regen</td>
-        <td class="weight">0.5</td>
-        <td class="value">10</td>
-        <td class="obtaining">dark brotherhood quest</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">jazbay grapes</td>
-        <td class="effect1">weakness to magic</td>
-        <td class="effect2">fortify magicka</td>
-        <td class="effect3">regenerate magicka</td>
-        <td class="effect4">ravage health</td>
-        <td class="weight">0.2</td>
-        <td class="value">1</td>
-        <td class="obtaining">hydro-thermal regions</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">juniper berries</td>
-        <td class="effect1">weakness to fire</td>
-        <td class="effect2">fortify marksman</td>
-        <td class="effect3">regenerate health</td>
-        <td class="effect4">damage stamina regen</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">juniper trees</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">large antlers</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify stamina</td>
-        <td class="effect3">slow</td>
-        <td class="effect4">damage stamina regen</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">deer, elk</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">lavender</td>
-        <td class="effect1">resist magic</td>
-        <td class="effect2">fortify stamina</td>
-        <td class="effect3">ravage magicka</td>
-        <td class="effect4">fortify conjuration</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">outdoors in clumps</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">luna moth wing</td>
-        <td class="effect1">damage magicka</td>
-        <td class="effect2">fortify light armor</td>
-        <td class="effect3">regenerate health</td>
-        <td class="effect4">invisibility</td>
-        <td class="weight">0.1</td>
-        <td class="value">5</td>
-        <td class="obtaining">luna moth</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">moon sugar</td>
-        <td class="effect1">weakness to fire</td>
-        <td class="effect2">resist frost</td>
-        <td class="effect3">restore magicka</td>
-        <td class="effect4">regenerate magicka</td>
-        <td class="weight">0.3</td>
-        <td class="value">50</td>
-        <td class="obtaining">khajiit caravans</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">mora tapinella</td>
-        <td class="effect1">restore magicka</td>
-        <td class="effect2">lingering damage health</td>
-        <td class="effect3">regenerate stamina</td>
-        <td class="effect4">fortify illusion</td>
-        <td class="weight">0.3</td>
-        <td class="value">4</td>
-        <td class="obtaining">dead trees</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">mudcrab chitin</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">cure disease</td>
-        <td class="effect3">resist poison</td>
-        <td class="effect4">resist fire</td>
-        <td class="weight">0.3</td>
-        <td class="value">2</td>
-        <td class="obtaining">mudcrabs</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">namira's rot</td>
-        <td class="effect1">damage magicka</td>
-        <td class="effect2">fortify lockpicking</td>
-        <td class="effect3">fear</td>
-        <td class="effect4">regenerate health</td>
-        <td class="weight">0.3</td>
-        <td class="value">0</td>
-        <td class="obtaining">caves</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">netch jelly</td>
-        <td class="effect1">paralysis</td>
-        <td class="effect2">fortify carry weight</td>
-        <td class="effect3">restore stamina</td>
-        <td class="effect4">fear</td>
-        <td class="weight">0.5</td>
-        <td class="value">20</td>
-        <td class="obtaining">netch</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">nightshade</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">damage magicka regen</td>
-        <td class="effect3">lingering damage stamina</td>
-        <td class="effect4">fortify destruction</td>
-        <td class="weight">0.1</td>
-        <td class="value">8</td>
-        <td class="obtaining">graveyards, undead areas</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">nirnroot</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">damage stamina</td>
-        <td class="effect3">invisibility</td>
-        <td class="effect4">resist magic</td>
-        <td class="weight">0.2</td>
-        <td class="value">10</td>
-        <td class="obtaining">near water</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">nordic barnacle</td>
-        <td class="effect1">damage magicka</td>
-        <td class="effect2">waterbreathing</td>
-        <td class="effect3">regenerate health</td>
-        <td class="effect4">fortify pickpocket</td>
-        <td class="weight">0.2</td>
-        <td class="value">5</td>
-        <td class="obtaining">underwater</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">orange dartwing</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">ravage magicka</td>
-        <td class="effect3">fortify pickpocket</td>
-        <td class="effect4">lingering damage health</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">hovering above water</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">pearl</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify block</td>
-        <td class="effect3">restore magicka</td>
-        <td class="effect4">resist shock</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">satchels;  alchemy laboratory of a homestead †  pearl oyster</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">pine thrush egg</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify lockpicking</td>
-        <td class="effect3">weakness to poison</td>
-        <td class="effect4">resist shock</td>
-        <td class="weight">0.5</td>
-        <td class="value">2</td>
-        <td class="obtaining">nests in forests</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">poison bloom</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">slow</td>
-        <td class="effect3">fortify carry weight</td>
-        <td class="effect4">fear</td>
-        <td class="weight">0.3</td>
-        <td class="value">5</td>
-        <td class="obtaining">darkfall cave</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">powdered mammoth tusk</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify sneak</td>
-        <td class="effect3">weakness to fire</td>
-        <td class="effect4">fear</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">giant camps, alchemy laboratory of a homestead†</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">purple mountain flower</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify sneak</td>
-        <td class="effect3">lingering damage magicka</td>
-        <td class="effect4">resist frost</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">mountain flower clumps</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">red mountain flower</td>
-        <td class="effect1">restore magicka</td>
-        <td class="effect2">ravage magicka</td>
-        <td class="effect3">fortify magicka</td>
-        <td class="effect4">damage health</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">mountain flower clumps</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">river betty</td>
-        <td class="effect1">damage health</td>
-        <td class="effect2">fortify alteration</td>
-        <td class="effect3">slow</td>
-        <td class="effect4">fortify carry weight</td>
-        <td class="weight">0.3</td>
-        <td class="value">15</td>
-        <td class="obtaining">lakes, rivers, streams and fish barrels</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">rock warbler egg</td>
-        <td class="effect1">restore health</td>
-        <td class="effect2">fortify one-handed</td>
-        <td class="effect3">damage stamina</td>
-        <td class="effect4">weakness to magic</td>
-        <td class="weight">0.5</td>
-        <td class="value">2</td>
-        <td class="obtaining">rock warbler nest</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">sabre cat tooth</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify heavy armor</td>
-        <td class="effect3">fortify smithing</td>
-        <td class="effect4">weakness to poison</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">sabre cat, snowy sabre cat</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">salmon roe</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">waterbreathing</td>
-        <td class="effect3">fortify magicka</td>
-        <td class="effect4">regenerate magicka</td>
-        <td class="weight">0.2</td>
-        <td class="value">5</td>
-        <td class="obtaining">salmon jumping up falls, kitchen of a homestead†</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">salt pile</td>
-        <td class="effect1">weakness to magic</td>
-        <td class="effect2">fortify restoration</td>
-        <td class="effect3">slow</td>
-        <td class="effect4">regenerate magicka</td>
-        <td class="weight">0.2</td>
-        <td class="value">2</td>
-        <td class="obtaining">merchants, containers, near cooking places</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">scaly pholiota</td>
-        <td class="effect1">weakness to magic</td>
-        <td class="effect2">fortify illusion</td>
-        <td class="effect3">regenerate stamina</td>
-        <td class="effect4">fortify carry weight</td>
-        <td class="weight">0.3</td>
-        <td class="value">4</td>
-        <td class="obtaining">dead birch trees</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">scathecraw</td>
-        <td class="effect1">ravage health</td>
-        <td class="effect2">ravage stamina</td>
-        <td class="effect3">ravage magicka</td>
-        <td class="effect4">lingering damage health</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">harvested all over solstheim</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">silverside perch</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">damage stamina regen</td>
-        <td class="effect3">ravage health</td>
-        <td class="effect4">resist frost</td>
-        <td class="weight">0.3</td>
-        <td class="value">15</td>
-        <td class="obtaining">lakes, rivers, streams and fish barrels</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">skeever tail</td>
-        <td class="effect1">damage stamina regen</td>
-        <td class="effect2">ravage health</td>
-        <td class="effect3">damage health</td>
-        <td class="effect4">fortify light armor</td>
-        <td class="weight">0.2</td>
-        <td class="value">3</td>
-        <td class="obtaining">skeever</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">slaughterfish egg</td>
-        <td class="effect1">resist poison</td>
-        <td class="effect2">fortify pickpocket</td>
-        <td class="effect3">lingering damage health</td>
-        <td class="effect4">fortify stamina</td>
-        <td class="weight">0.2</td>
-        <td class="value">3</td>
-        <td class="obtaining">underwater</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">slaughterfish scales</td>
-        <td class="effect1">resist frost</td>
-        <td class="effect2">lingering damage health</td>
-        <td class="effect3">fortify heavy armor</td>
-        <td class="effect4">fortify block</td>
-        <td class="weight">0.1</td>
-        <td class="value">3</td>
-        <td class="obtaining">slaughterfish</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">small antlers</td>
-        <td class="effect1">weakness to poison</td>
-        <td class="effect2">fortify restoration</td>
-        <td class="effect3">lingering damage stamina</td>
-        <td class="effect4">damage health</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">elk</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">small pearl</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify one-handed</td>
-        <td class="effect3">fortify restoration</td>
-        <td class="effect4">resist frost</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">pearl oyster</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">snowberries</td>
-        <td class="effect1">resist fire</td>
-        <td class="effect2">fortify enchanting</td>
-        <td class="effect3">resist frost</td>
-        <td class="effect4">resist shock</td>
-        <td class="weight">0.1</td>
-        <td class="value">4</td>
-        <td class="obtaining">snowberry bush, snowy areas</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">spawn ash</td>
-        <td class="effect1">ravage stamina</td>
-        <td class="effect2">resist fire</td>
-        <td class="effect3">fortify enchanting</td>
-        <td class="effect4">ravage magicka</td>
-        <td class="weight">0.1</td>
-        <td class="value">20</td>
-        <td class="obtaining">ash spawn</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">spider egg</td>
-        <td class="effect1">damage stamina</td>
-        <td class="effect2">damage magicka regen</td>
-        <td class="effect3">fortify lockpicking</td>
-        <td class="effect4">fortify marksman</td>
-        <td class="weight">0.2</td>
-        <td class="value">5</td>
-        <td class="obtaining">spider lairs</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">spriggan sap</td>
-        <td class="effect1">damage magicka regen</td>
-        <td class="effect2">fortify enchanting</td>
-        <td class="effect3">fortify smithing</td>
-        <td class="effect4">fortify alteration</td>
-        <td class="weight">0.2</td>
-        <td class="value">15</td>
-        <td class="obtaining">spriggan</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">swamp fungal pod</td>
-        <td class="effect1">resist shock</td>
-        <td class="effect2">lingering damage magicka</td>
-        <td class="effect3">paralysis</td>
-        <td class="effect4">restore health</td>
-        <td class="weight">0.3</td>
-        <td class="value">5</td>
-        <td class="obtaining">swamps</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">taproot</td>
-        <td class="effect1">weakness to magic</td>
-        <td class="effect2">fortify illusion</td>
-        <td class="effect3">regenerate magicka</td>
-        <td class="effect4">restore magicka</td>
-        <td class="weight">0.5</td>
-        <td class="value">15</td>
-        <td class="obtaining">spriggan</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">thistle branch</td>
-        <td class="effect1">resist frost</td>
-        <td class="effect2">ravage stamina</td>
-        <td class="effect3">resist poison</td>
-        <td class="effect4">fortify heavy armor</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">thistle plant</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">torchbug thorax</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">lingering damage magicka</td>
-        <td class="effect3">weakness to magic</td>
-        <td class="effect4">fortify stamina</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">torchbugs, glowing at night</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">trama root</td>
-        <td class="effect1">weakness to shock</td>
-        <td class="effect2">fortify carry weight</td>
-        <td class="effect3">damage magicka</td>
-        <td class="effect4">slow</td>
-        <td class="weight">0.2</td>
-        <td class="value">1</td>
-        <td class="obtaining">harvested from ashen areas of solstheim</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">troll fat</td>
-        <td class="effect1">resist poison</td>
-        <td class="effect2">fortify two-handed</td>
-        <td class="effect3">frenzy</td>
-        <td class="effect4">damage health</td>
-        <td class="weight">1</td>
-        <td class="value">15</td>
-        <td class="obtaining">trolls</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">tundra cotton</td>
-        <td class="effect1">resist magic</td>
-        <td class="effect2">fortify magicka</td>
-        <td class="effect3">fortify block</td>
-        <td class="effect4">fortify barter</td>
-        <td class="weight">0.1</td>
-        <td class="value">1</td>
-        <td class="obtaining">high mountains below snow line, tundra</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">vampire dust</td>
-        <td class="effect1">invisibility</td>
-        <td class="effect2">restore magicka</td>
-        <td class="effect3">regenerate health</td>
-        <td class="effect4">cure disease</td>
-        <td class="weight">0.2</td>
-        <td class="value">25</td>
-        <td class="obtaining">vampires, the silver hand</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">void salts</td>
-        <td class="effect1">weakness to shock</td>
-        <td class="effect2">resist magic</td>
-        <td class="effect3">damage health</td>
-        <td class="effect4">fortify magicka</td>
-        <td class="weight">0.2</td>
-        <td class="value">125</td>
-        <td class="obtaining">storm atronach</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">wheat</td>
-        <td class="effect1">restore health</td>
-        <td class="effect2">fortify health</td>
-        <td class="effect3">damage stamina regen</td>
-        <td class="effect4">lingering damage magicka</td>
-        <td class="weight">0.1</td>
-        <td class="value">5</td>
-        <td class="obtaining">grows on farms, containers</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">white cap</td>
-        <td class="effect1">weakness to frost</td>
-        <td class="effect2">fortify heavy armor</td>
-        <td class="effect3">restore magicka</td>
-        <td class="effect4">ravage magicka</td>
-        <td class="weight">0.3</td>
-        <td class="value">0</td>
-        <td class="obtaining">mushroom clusters near caves or dungeons</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">wisp wrappings</td>
-        <td class="effect1">restore stamina</td>
-        <td class="effect2">fortify destruction</td>
-        <td class="effect3">fortify carry weight</td>
-        <td class="effect4">resist magic</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">wispmother</td>
-      </tr>
-      <tr>
-        <td class="ingredientname">yellow mountain flower</td>
-        <td class="effect1">resist poison</td>
-        <td class="effect2">fortify restoration</td>
-        <td class="effect3">fortify health</td>
-        <td class="effect4">damage stamina regen</td>
-        <td class="weight">0.1</td>
-        <td class="value">2</td>
-        <td class="obtaining">darkfall cave</td>
-      </tr>
-    </tbody>
-    <tfoot></tfoot>
-  </table>
-</div>
-</body>
+				// Loop through all table rows, and hide those who don't match the search query
+				for (i = 0; i < tr.length; i++) {
+					td = tr[i].getElementsByTagName("td");
+					k = true;
+					for (j = 0; j < td.length; j++) {
+						if (td[j]) {
+							td[j].classList.remove("highlight");
+							td[j].classList.remove("highlight2");
+							txtValue = td[j].textContent || td[j].innerText;
+							if (txtValue.toUpperCase().indexOf(filter) > -1
+								|| txtValue.toUpperCase().indexOf(filter2) > -1) {
+								tr[i].style.display = "";
+								if (txtValue.toUpperCase().indexOf(filter) > -1) {
+									if (filter.length > 0 && filter != "") {
+										td[j].classList.add("highlight");
+									}
+								}
+								if (txtValue.toUpperCase().indexOf(filter2) > -1) {
+									if (filter2.length > 0 && filter2 != "") {
+										td[j].classList.add("highlight2");
+									}
+								}
+								k = false;
+							} else if (k) {
+								tr[i].style.display = "none";
+								td[j].classList.remove("highlight");
+								td[j].classList.remove("highlight2");
+							}
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="ingredients">
+			<input class="search" id="filterInp" placeholder="filter" onkeyup="filter()" />
+			<input class="search" id="filterInp2" placeholder="secondary filter" onkeyup="filter()" />
+			<table id="alchemy" cellpadding="8pt">
+				<thead>
+					<tr>
+						<th class="headersort" title="sort ascending">ingredient
+							<div><span class="chevron"></span><span class="chevron"></span></div>
+						</th>
+						<th class="headersort" title="sort ascending">primary effect
+							<div><span class="chevron"></span><span class="chevron"></span></div>
+						</th>
+						<th class="headersort" title="sort ascending">secondary effect
+							<div><span class="chevron"></span><span class="chevron"></span></div>
+						</th>
+						<th class="headersort" title="sort ascending">tertiary effect
+							<div><span class="chevron"></span><span class="chevron"></span></div>
+						</th>
+						<th class="headersort" title="sort ascending">quaternary effect
+							<div><span class="chevron"></span><span class="chevron"></span></div>
+						</th>
+						<th class="headersort" title="sort ascending">weight
+							<div><span class="chevron"></span><span class="chevron"></span></div>
+						</th>
+						<th class="headersort" title="sort ascending">value
+							<div><span class="chevron"></span><span class="chevron"></span></div>
+						</th>
+						<th class="headersort" title="sort ascending">obtained
+							<div><span class="chevron"></span><span class="chevron"></span></div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="ingredientname">abecean longfin</td>
+						<td class="effect1">weakness to frost</td>
+						<td class="effect2">fortify sneak</td>
+						<td class="effect3">weakness to poison</td>
+						<td class="effect4">fortify restoration</td>
+						<td class="weight">0.5</td>
+						<td class="value">15</td>
+						<td id="coral" class="obtaining">lakes, rivers, streams, fish barrels</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">ancestor moth wing</td>
+						<td class="effect1">damage stamina</td>
+						<td class="effect2">fortify conjuration</td>
+						<td class="effect3">damage magicka regen</td>
+						<td class="effect4">fortify enchanting</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">ancestor glade</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">ash creep cluster</td>
+						<td class="effect1">damage stamina</td>
+						<td class="effect2">invisibility</td>
+						<td class="effect3">resist fire</td>
+						<td class="effect4">fortify destruction</td>
+						<td class="weight">0.3</td>
+						<td class="value">20</td>
+						<td class="obtaining">harvested from ash covered areas of solstheim</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">ash hopper jelly</td>
+						<td class="effect1">restore health</td>
+						<td class="effect2">fortify light armor</td>
+						<td class="effect3">resist shock</td>
+						<td class="effect4">weakness to frost</td>
+						<td class="weight">0.3</td>
+						<td class="value">20</td>
+						<td class="obtaining">ash hopper corpses</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">ashen grass pod</td>
+						<td class="effect1">resist fire</td>
+						<td class="effect2">weakness to shock</td>
+						<td class="effect3">fortify lockpicking</td>
+						<td class="effect4">fortify sneak</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">harvested from ash covered areas of solstheim</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">bear claws</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify health</td>
+						<td class="effect3">fortify one-handed</td>
+						<td class="effect4">damage magicka regen</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">bears</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">bee</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">ravage stamina</td>
+						<td class="effect3">regenerate stamina</td>
+						<td class="effect4">weakness to shock</td>
+						<td class="weight">0.1</td>
+						<td class="value">3</td>
+						<td class="obtaining">beehive</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">beehive husk</td>
+						<td class="effect1">resist poison</td>
+						<td class="effect2">fortify light armor</td>
+						<td class="effect3">fortify sneak</td>
+						<td class="effect4">fortify destruction</td>
+						<td class="weight">1</td>
+						<td class="value">5</td>
+						<td class="obtaining">beehive</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">berit's ashes
+							<p class="effect1"><i class="effect2">(identical to </i></p>
+						</td>
+						<td class="effect3">damage stamina</td>
+						<td class="effect4">resist fire</td>
+						<td class="weight">fortify conjuration</td>
+						<td class="value">ravage stamina</td>
+						<td class="obtaining">0.5</td>
+						<td>5</td>
+						<td>quest item given by thadgeir</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">bleeding crown</td>
+						<td class="effect1">weakness to fire</td>
+						<td class="effect2">fortify block</td>
+						<td class="effect3">weakness to poison</td>
+						<td class="effect4">resist magic</td>
+						<td class="weight">0.3</td>
+						<td class="value">10</td>
+						<td class="obtaining">mushroom clusters</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">blisterwort</td>
+						<td class="effect1">damage stamina</td>
+						<td class="effect2">frenzy</td>
+						<td class="effect3">restore health</td>
+						<td class="effect4">fortify smithing</td>
+						<td class="weight">0.2</td>
+						<td class="value">12</td>
+						<td class="obtaining">caves and dark areas</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">blue butterfly wing</td>
+						<td class="effect1">damage stamina</td>
+						<td class="effect2">fortify conjuration</td>
+						<td class="effect3">damage magicka regen</td>
+						<td class="effect4">fortify enchanting</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">blue butterfly</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">blue dartwing</td>
+						<td class="effect1">resist shock</td>
+						<td class="effect2">fortify pickpocket</td>
+						<td class="effect3">restore health</td>
+						<td class="effect4">fear</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">hovering above water</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">blue mountain flower</td>
+						<td class="effect1">restore health</td>
+						<td class="effect2">fortify conjuration</td>
+						<td class="effect3">fortify health</td>
+						<td class="effect4">damage magicka regen</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">mountain flower clumps</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">boar tusk</td>
+						<td class="effect1">fortify stamina</td>
+						<td class="effect2">fortify health</td>
+						<td class="effect3">fortify block</td>
+						<td class="effect4">frenzy</td>
+						<td class="weight">0.5</td>
+						<td class="value">20</td>
+						<td class="obtaining">tusked bristlebacks</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">bone meal</td>
+						<td class="effect1">damage stamina</td>
+						<td class="effect2">resist fire</td>
+						<td class="effect3">fortify conjuration</td>
+						<td class="effect4">ravage stamina</td>
+						<td class="weight">0.5</td>
+						<td class="value">5</td>
+						<td class="obtaining">draugr and skeletons</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">briar heart</td>
+						<td class="effect1">restore magicka</td>
+						<td class="effect2">fortify block</td>
+						<td class="effect3">paralysis</td>
+						<td class="effect4">fortify magicka</td>
+						<td class="weight">0.5</td>
+						<td class="value">20</td>
+						<td class="obtaining">forsworn leaders</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">burnt spriggan wood</td>
+						<td class="effect1">weakness to fire</td>
+						<td class="effect2">fortify alteration</td>
+						<td class="effect3">damage magicka regen</td>
+						<td class="effect4">slow</td>
+						<td class="weight">0.5</td>
+						<td class="value">20</td>
+						<td class="obtaining">burnt spriggans</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">butterfly wing</td>
+						<td class="effect1">restore health</td>
+						<td class="effect2">fortify barter</td>
+						<td class="effect3">lingering damage stamina</td>
+						<td class="effect4">damage magicka</td>
+						<td class="weight">0.1</td>
+						<td class="value">3</td>
+						<td class="obtaining">monarch butterfly</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">canis root</td>
+						<td class="effect1">damage stamina</td>
+						<td class="effect2">fortify one-handed</td>
+						<td class="effect3">fortify marksman</td>
+						<td class="effect4">paralysis</td>
+						<td class="weight">0.1</td>
+						<td class="value">5</td>
+						<td class="obtaining">near rocky areas</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">charred skeever hide</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">cure disease</td>
+						<td class="effect3">resist poison</td>
+						<td class="effect4">restore health</td>
+						<td class="weight">0.5</td>
+						<td class="value">1</td>
+						<td class="obtaining">found at campfires</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">chaurus eggs</td>
+						<td class="effect1">weakness to poison</td>
+						<td class="effect2">fortify stamina</td>
+						<td class="effect3">damage magicka</td>
+						<td class="effect4">invisibility</td>
+						<td class="weight">0.2</td>
+						<td class="value">10</td>
+						<td class="obtaining">falmer caves</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">chaurus hunter antennae</td>
+						<td class="effect1">damage stamina</td>
+						<td class="effect2">fortify conjuration</td>
+						<td class="effect3">damage magicka regen</td>
+						<td class="effect4">fortify enchanting</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">chaurus hunter, chaurus hunter fledgling</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">chicken's egg</td>
+						<td class="effect1">resist magic</td>
+						<td class="effect2">damage magicka regen</td>
+						<td class="effect3">waterbreathing</td>
+						<td class="effect4">lingering damage stamina</td>
+						<td class="weight">0.5</td>
+						<td class="value">2</td>
+						<td class="obtaining">chicken's nest</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">creep cluster</td>
+						<td class="effect1">restore magicka</td>
+						<td class="effect2">damage stamina regen</td>
+						<td class="effect3">fortify carry weight</td>
+						<td class="effect4">weakness to magic</td>
+						<td class="weight">0.2</td>
+						<td class="value">1</td>
+						<td class="obtaining">hydro-thermal areas</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">crimson nirnroot</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">damage stamina</td>
+						<td class="effect3">invisibility</td>
+						<td class="effect4">resist magic</td>
+						<td class="weight">0.2</td>
+						<td class="value">10</td>
+						<td class="obtaining">blackreach</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">cyrodilic spadetail</td>
+						<td class="effect1">damage stamina</td>
+						<td class="effect2">fortify restoration</td>
+						<td class="effect3">fear</td>
+						<td class="effect4">ravage health</td>
+						<td class="weight">0.3</td>
+						<td class="value">15</td>
+						<td class="obtaining">lakes, rivers, streams, fish barrels</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">daedra heart</td>
+						<td class="effect1">restore health</td>
+						<td class="effect2">damage stamina regen</td>
+						<td class="effect3">damage magicka</td>
+						<td class="effect4">fear</td>
+						<td class="weight">0.5</td>
+						<td class="value">250</td>
+						<td class="obtaining">daedra</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">deathbell</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">ravage stamina</td>
+						<td class="effect3">slow</td>
+						<td class="effect4">weakness to poison</td>
+						<td class="weight">0.1</td>
+						<td class="value">4</td>
+						<td class="obtaining">wild, on planters</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">dragon's tongue</td>
+						<td class="effect1">resist fire</td>
+						<td class="effect2">fortify barter</td>
+						<td class="effect3">fortify illusion</td>
+						<td class="effect4">fortify two-handed</td>
+						<td class="weight">0.1</td>
+						<td class="value">5</td>
+						<td class="obtaining">hydro-thermal areas</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">dwarven oil</td>
+						<td class="effect1">weakness to magic</td>
+						<td class="effect2">fortify illusion</td>
+						<td class="effect3">regenerate magicka</td>
+						<td class="effect4">restore magicka</td>
+						<td class="weight">0.3</td>
+						<td class="value">15</td>
+						<td class="obtaining">dwemer ruins</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">ectoplasm</td>
+						<td class="effect1">restore magicka</td>
+						<td class="effect2">fortify destruction</td>
+						<td class="effect3">fortify magicka</td>
+						<td class="effect4">damage health</td>
+						<td class="weight">0.1</td>
+						<td class="value">25</td>
+						<td class="obtaining">ghostlike creatures</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">elves ear</td>
+						<td class="effect1">restore magicka</td>
+						<td class="effect2">fortify marksman</td>
+						<td class="effect3">weakness to frost</td>
+						<td class="effect4">resist fire</td>
+						<td class="weight">0.1</td>
+						<td class="value">10</td>
+						<td class="obtaining">plant, hanging herbs</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">emperor parasol moss</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">fortify magicka</td>
+						<td class="effect3">regenerate health</td>
+						<td class="effect4">fortify two-handed</td>
+						<td class="weight">0.3</td>
+						<td class="value">1</td>
+						<td class="obtaining">hanging from emperor parasol around tel mithryn</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">eye of sabre cat</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">ravage health</td>
+						<td class="effect3">damage magicka</td>
+						<td class="effect4">restore health</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">sabre cat, snowy sabre cat</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">falmer ear</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">frenzy</td>
+						<td class="effect3">resist poison</td>
+						<td class="effect4">fortify lockpicking</td>
+						<td class="weight">0.2</td>
+						<td class="value">10</td>
+						<td class="obtaining">falmer</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">felsaad tern feathers</td>
+						<td class="effect1">restore health</td>
+						<td class="effect2">fortify light armor</td>
+						<td class="effect3">cure disease</td>
+						<td class="effect4">resist magic</td>
+						<td class="weight">0.1</td>
+						<td class="value">15</td>
+						<td class="obtaining">felsaad tern</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">fire salts</td>
+						<td class="effect1">weakness to frost</td>
+						<td class="effect2">resist fire</td>
+						<td class="effect3">restore magicka</td>
+						<td class="effect4">regenerate magicka</td>
+						<td class="weight">0.3</td>
+						<td class="value">50</td>
+						<td class="obtaining">flame atronach</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">fly amanita</td>
+						<td class="effect1">resist fire</td>
+						<td class="effect2">fortify two-handed</td>
+						<td class="effect3">frenzy</td>
+						<td class="effect4">regenerate stamina</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">mushroom clusters in and around caves</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">frost mirriam</td>
+						<td class="effect1">resist frost</td>
+						<td class="effect2">fortify sneak</td>
+						<td class="effect3">ravage magicka</td>
+						<td class="effect4">damage stamina regen</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">hanging in homes, businesses and giant camps</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">frost salts</td>
+						<td class="effect1">weakness to fire</td>
+						<td class="effect2">resist frost</td>
+						<td class="effect3">restore magicka</td>
+						<td class="effect4">fortify conjuration</td>
+						<td class="weight">0.3</td>
+						<td class="value">100</td>
+						<td class="obtaining">frost atronach</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">garlic</td>
+						<td class="effect1">resist poison</td>
+						<td class="effect2">fortify stamina</td>
+						<td class="effect3">regenerate magicka</td>
+						<td class="effect4">regenerate health</td>
+						<td class="weight">0.3</td>
+						<td class="value">1</td>
+						<td class="obtaining">hanging in homes, businesses and cooking areas</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">giant lichen</td>
+						<td class="effect1">weakness to shock</td>
+						<td class="effect2">ravage health</td>
+						<td class="effect3">weakness to poison</td>
+						<td class="effect4">restore magicka</td>
+						<td class="weight">0.3</td>
+						<td class="value">5</td>
+						<td class="obtaining">swamps</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">giant's toe</td>
+						<td class="effect1">damage stamina</td>
+						<td class="effect2">fortify health</td>
+						<td class="effect3">fortify carry weight</td>
+						<td class="effect4">damage stamina regen</td>
+						<td class="weight">1</td>
+						<td class="value">20</td>
+						<td class="obtaining">giants</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">gleamblossom</td>
+						<td class="effect1">resist magic</td>
+						<td class="effect2">fear</td>
+						<td class="effect3">regenerate health</td>
+						<td class="effect4">paralysis</td>
+						<td class="weight">0.1</td>
+						<td class="value">5</td>
+						<td class="obtaining">harvested in darkfall cave, forgotten vale</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">glow dust</td>
+						<td class="effect1">damage magicka</td>
+						<td class="effect2">damage magicka regen</td>
+						<td class="effect3">fortify destruction</td>
+						<td class="effect4">resist shock</td>
+						<td class="weight">0.5</td>
+						<td class="value">20</td>
+						<td class="obtaining">wispmother</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">glowing mushroom</td>
+						<td class="effect1">resist shock</td>
+						<td class="effect2">fortify destruction</td>
+						<td class="effect3">fortify smithing</td>
+						<td class="effect4">fortify health</td>
+						<td class="weight">0.2</td>
+						<td class="value">5</td>
+						<td class="obtaining">caves, dwemer ruins</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">grass pod</td>
+						<td class="effect1">resist poison</td>
+						<td class="effect2">ravage magicka</td>
+						<td class="effect3">fortify alteration</td>
+						<td class="effect4">restore magicka</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">tundras</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">hagraven claw</td>
+						<td class="effect1">resist magic</td>
+						<td class="effect2">lingering damage magicka</td>
+						<td class="effect3">fortify enchanting</td>
+						<td class="effect4">fortify barter</td>
+						<td class="weight">0.3</td>
+						<td class="value">20</td>
+						<td class="obtaining">hagraven</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">hagraven feathers</td>
+						<td class="effect1">damage magicka</td>
+						<td class="effect2">fortify conjuration</td>
+						<td class="effect3">frenzy</td>
+						<td class="effect4">weakness to shock</td>
+						<td class="weight">0.1</td>
+						<td class="value">20</td>
+						<td class="obtaining">hagraven</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">hanging moss</td>
+						<td class="effect1">damage magicka</td>
+						<td class="effect2">fortify health</td>
+						<td class="effect3">damage magicka regen</td>
+						<td class="effect4">fortify one-handed</td>
+						<td class="weight">0.3</td>
+						<td class="value">1</td>
+						<td class="obtaining">vegetated areas, hanging in caves, from buildings</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">hawk beak</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">resist frost</td>
+						<td class="effect3">fortify carry weight</td>
+						<td class="effect4">resist shock</td>
+						<td class="weight">0.3</td>
+						<td class="value">15</td>
+						<td class="obtaining">hawks</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">hawk feathers</td>
+						<td class="effect1">cure disease</td>
+						<td class="effect2">fortify light armor</td>
+						<td class="effect3">fortify one-handed</td>
+						<td class="effect4">fortify sneak</td>
+						<td class="weight">0.1</td>
+						<td class="value">15</td>
+						<td class="obtaining">hawks</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">hawk's egg</td>
+						<td class="effect1">resist magic</td>
+						<td class="effect2">damage magicka regen</td>
+						<td class="effect3">waterbreathing</td>
+						<td class="effect4">lingering damage stamina</td>
+						<td class="weight">0.5</td>
+						<td class="value">2</td>
+						<td class="obtaining">hawk's nest</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">histcarp</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify magicka</td>
+						<td class="effect3">damage stamina regen</td>
+						<td class="effect4">waterbreathing</td>
+						<td class="weight">0.3</td>
+						<td class="value">6</td>
+						<td class="obtaining">lakes, rivers, streams and fish barrels</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">honeycomb</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify block</td>
+						<td class="effect3">fortify light armor</td>
+						<td class="effect4">ravage stamina</td>
+						<td class="weight">1</td>
+						<td class="value">5</td>
+						<td class="obtaining">beehive</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">human flesh</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">paralysis</td>
+						<td class="effect3">restore magicka</td>
+						<td class="effect4">fortify sneak</td>
+						<td class="weight">0.3</td>
+						<td class="value">1</td>
+						<td class="obtaining">falmer vampire dens</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">human heart</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">damage magicka</td>
+						<td class="effect3">damage magicka regen</td>
+						<td class="effect4">frenzy</td>
+						<td class="weight">1</td>
+						<td class="value">0</td>
+						<td class="obtaining">falmer vampire dens</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">ice wraith teeth</td>
+						<td class="effect1">weakness to frost</td>
+						<td class="effect2">fortify heavy armor</td>
+						<td class="effect3">invisibility</td>
+						<td class="effect4">weakness to fire</td>
+						<td class="weight">0.3</td>
+						<td class="value">30</td>
+						<td class="obtaining">ice wraith</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">imp stool</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">lingering damage health</td>
+						<td class="effect3">paralysis</td>
+						<td class="effect4">restore health</td>
+						<td class="weight">0.3</td>
+						<td class="value">0</td>
+						<td class="obtaining">mushroom clusters near caves or dungeons</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">jarrin root</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">damage magicka</td>
+						<td class="effect3">damage stamina</td>
+						<td class="effect4">damage magicka regen</td>
+						<td class="weight">0.5</td>
+						<td class="value">10</td>
+						<td class="obtaining">dark brotherhood quest</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">jazbay grapes</td>
+						<td class="effect1">weakness to magic</td>
+						<td class="effect2">fortify magicka</td>
+						<td class="effect3">regenerate magicka</td>
+						<td class="effect4">ravage health</td>
+						<td class="weight">0.2</td>
+						<td class="value">1</td>
+						<td class="obtaining">hydro-thermal regions</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">juniper berries</td>
+						<td class="effect1">weakness to fire</td>
+						<td class="effect2">fortify marksman</td>
+						<td class="effect3">regenerate health</td>
+						<td class="effect4">damage stamina regen</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">juniper trees</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">large antlers</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify stamina</td>
+						<td class="effect3">slow</td>
+						<td class="effect4">damage stamina regen</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">deer, elk</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">lavender</td>
+						<td class="effect1">resist magic</td>
+						<td class="effect2">fortify stamina</td>
+						<td class="effect3">ravage magicka</td>
+						<td class="effect4">fortify conjuration</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">outdoors in clumps</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">luna moth wing</td>
+						<td class="effect1">damage magicka</td>
+						<td class="effect2">fortify light armor</td>
+						<td class="effect3">regenerate health</td>
+						<td class="effect4">invisibility</td>
+						<td class="weight">0.1</td>
+						<td class="value">5</td>
+						<td class="obtaining">luna moth</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">moon sugar</td>
+						<td class="effect1">weakness to fire</td>
+						<td class="effect2">resist frost</td>
+						<td class="effect3">restore magicka</td>
+						<td class="effect4">regenerate magicka</td>
+						<td class="weight">0.3</td>
+						<td class="value">50</td>
+						<td class="obtaining">khajiit caravans</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">mora tapinella</td>
+						<td class="effect1">restore magicka</td>
+						<td class="effect2">lingering damage health</td>
+						<td class="effect3">regenerate stamina</td>
+						<td class="effect4">fortify illusion</td>
+						<td class="weight">0.3</td>
+						<td class="value">4</td>
+						<td class="obtaining">dead trees</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">mudcrab chitin</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">cure disease</td>
+						<td class="effect3">resist poison</td>
+						<td class="effect4">resist fire</td>
+						<td class="weight">0.3</td>
+						<td class="value">2</td>
+						<td class="obtaining">mudcrabs</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">namira's rot</td>
+						<td class="effect1">damage magicka</td>
+						<td class="effect2">fortify lockpicking</td>
+						<td class="effect3">fear</td>
+						<td class="effect4">regenerate health</td>
+						<td class="weight">0.3</td>
+						<td class="value">0</td>
+						<td class="obtaining">caves</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">netch jelly</td>
+						<td class="effect1">paralysis</td>
+						<td class="effect2">fortify carry weight</td>
+						<td class="effect3">restore stamina</td>
+						<td class="effect4">fear</td>
+						<td class="weight">0.5</td>
+						<td class="value">20</td>
+						<td class="obtaining">netch</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">nightshade</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">damage magicka regen</td>
+						<td class="effect3">lingering damage stamina</td>
+						<td class="effect4">fortify destruction</td>
+						<td class="weight">0.1</td>
+						<td class="value">8</td>
+						<td class="obtaining">graveyards, undead areas</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">nirnroot</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">damage stamina</td>
+						<td class="effect3">invisibility</td>
+						<td class="effect4">resist magic</td>
+						<td class="weight">0.2</td>
+						<td class="value">10</td>
+						<td class="obtaining">near water</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">nordic barnacle</td>
+						<td class="effect1">damage magicka</td>
+						<td class="effect2">waterbreathing</td>
+						<td class="effect3">regenerate health</td>
+						<td class="effect4">fortify pickpocket</td>
+						<td class="weight">0.2</td>
+						<td class="value">5</td>
+						<td class="obtaining">underwater</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">orange dartwing</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">ravage magicka</td>
+						<td class="effect3">fortify pickpocket</td>
+						<td class="effect4">lingering damage health</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">hovering above water</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">pearl</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify block</td>
+						<td class="effect3">restore magicka</td>
+						<td class="effect4">resist shock</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">satchels;  alchemy laboratory of a homestead †  pearl oyster</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">pine thrush egg</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify lockpicking</td>
+						<td class="effect3">weakness to poison</td>
+						<td class="effect4">resist shock</td>
+						<td class="weight">0.5</td>
+						<td class="value">2</td>
+						<td class="obtaining">nests in forests</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">poison bloom</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">slow</td>
+						<td class="effect3">fortify carry weight</td>
+						<td class="effect4">fear</td>
+						<td class="weight">0.3</td>
+						<td class="value">5</td>
+						<td class="obtaining">darkfall cave</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">powdered mammoth tusk</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify sneak</td>
+						<td class="effect3">weakness to fire</td>
+						<td class="effect4">fear</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">giant camps, alchemy laboratory of a homestead†</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">purple mountain flower</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify sneak</td>
+						<td class="effect3">lingering damage magicka</td>
+						<td class="effect4">resist frost</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">mountain flower clumps</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">red mountain flower</td>
+						<td class="effect1">restore magicka</td>
+						<td class="effect2">ravage magicka</td>
+						<td class="effect3">fortify magicka</td>
+						<td class="effect4">damage health</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">mountain flower clumps</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">river betty</td>
+						<td class="effect1">damage health</td>
+						<td class="effect2">fortify alteration</td>
+						<td class="effect3">slow</td>
+						<td class="effect4">fortify carry weight</td>
+						<td class="weight">0.3</td>
+						<td class="value">15</td>
+						<td class="obtaining">lakes, rivers, streams and fish barrels</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">rock warbler egg</td>
+						<td class="effect1">restore health</td>
+						<td class="effect2">fortify one-handed</td>
+						<td class="effect3">damage stamina</td>
+						<td class="effect4">weakness to magic</td>
+						<td class="weight">0.5</td>
+						<td class="value">2</td>
+						<td class="obtaining">rock warbler nest</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">sabre cat tooth</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify heavy armor</td>
+						<td class="effect3">fortify smithing</td>
+						<td class="effect4">weakness to poison</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">sabre cat, snowy sabre cat</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">salmon roe</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">waterbreathing</td>
+						<td class="effect3">fortify magicka</td>
+						<td class="effect4">regenerate magicka</td>
+						<td class="weight">0.2</td>
+						<td class="value">5</td>
+						<td class="obtaining">salmon jumping up falls, kitchen of a homestead†</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">salt pile</td>
+						<td class="effect1">weakness to magic</td>
+						<td class="effect2">fortify restoration</td>
+						<td class="effect3">slow</td>
+						<td class="effect4">regenerate magicka</td>
+						<td class="weight">0.2</td>
+						<td class="value">2</td>
+						<td class="obtaining">merchants, containers, near cooking places</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">scaly pholiota</td>
+						<td class="effect1">weakness to magic</td>
+						<td class="effect2">fortify illusion</td>
+						<td class="effect3">regenerate stamina</td>
+						<td class="effect4">fortify carry weight</td>
+						<td class="weight">0.3</td>
+						<td class="value">4</td>
+						<td class="obtaining">dead birch trees</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">scathecraw</td>
+						<td class="effect1">ravage health</td>
+						<td class="effect2">ravage stamina</td>
+						<td class="effect3">ravage magicka</td>
+						<td class="effect4">lingering damage health</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">harvested all over solstheim</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">silverside perch</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">damage stamina regen</td>
+						<td class="effect3">ravage health</td>
+						<td class="effect4">resist frost</td>
+						<td class="weight">0.3</td>
+						<td class="value">15</td>
+						<td class="obtaining">lakes, rivers, streams and fish barrels</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">skeever tail</td>
+						<td class="effect1">damage stamina regen</td>
+						<td class="effect2">ravage health</td>
+						<td class="effect3">damage health</td>
+						<td class="effect4">fortify light armor</td>
+						<td class="weight">0.2</td>
+						<td class="value">3</td>
+						<td class="obtaining">skeever</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">slaughterfish egg</td>
+						<td class="effect1">resist poison</td>
+						<td class="effect2">fortify pickpocket</td>
+						<td class="effect3">lingering damage health</td>
+						<td class="effect4">fortify stamina</td>
+						<td class="weight">0.2</td>
+						<td class="value">3</td>
+						<td class="obtaining">underwater</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">slaughterfish scales</td>
+						<td class="effect1">resist frost</td>
+						<td class="effect2">lingering damage health</td>
+						<td class="effect3">fortify heavy armor</td>
+						<td class="effect4">fortify block</td>
+						<td class="weight">0.1</td>
+						<td class="value">3</td>
+						<td class="obtaining">slaughterfish</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">small antlers</td>
+						<td class="effect1">weakness to poison</td>
+						<td class="effect2">fortify restoration</td>
+						<td class="effect3">lingering damage stamina</td>
+						<td class="effect4">damage health</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">elk</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">small pearl</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify one-handed</td>
+						<td class="effect3">fortify restoration</td>
+						<td class="effect4">resist frost</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">pearl oyster</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">snowberries</td>
+						<td class="effect1">resist fire</td>
+						<td class="effect2">fortify enchanting</td>
+						<td class="effect3">resist frost</td>
+						<td class="effect4">resist shock</td>
+						<td class="weight">0.1</td>
+						<td class="value">4</td>
+						<td class="obtaining">snowberry bush, snowy areas</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">spawn ash</td>
+						<td class="effect1">ravage stamina</td>
+						<td class="effect2">resist fire</td>
+						<td class="effect3">fortify enchanting</td>
+						<td class="effect4">ravage magicka</td>
+						<td class="weight">0.1</td>
+						<td class="value">20</td>
+						<td class="obtaining">ash spawn</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">spider egg</td>
+						<td class="effect1">damage stamina</td>
+						<td class="effect2">damage magicka regen</td>
+						<td class="effect3">fortify lockpicking</td>
+						<td class="effect4">fortify marksman</td>
+						<td class="weight">0.2</td>
+						<td class="value">5</td>
+						<td class="obtaining">spider lairs</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">spriggan sap</td>
+						<td class="effect1">damage magicka regen</td>
+						<td class="effect2">fortify enchanting</td>
+						<td class="effect3">fortify smithing</td>
+						<td class="effect4">fortify alteration</td>
+						<td class="weight">0.2</td>
+						<td class="value">15</td>
+						<td class="obtaining">spriggan</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">swamp fungal pod</td>
+						<td class="effect1">resist shock</td>
+						<td class="effect2">lingering damage magicka</td>
+						<td class="effect3">paralysis</td>
+						<td class="effect4">restore health</td>
+						<td class="weight">0.3</td>
+						<td class="value">5</td>
+						<td class="obtaining">swamps</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">taproot</td>
+						<td class="effect1">weakness to magic</td>
+						<td class="effect2">fortify illusion</td>
+						<td class="effect3">regenerate magicka</td>
+						<td class="effect4">restore magicka</td>
+						<td class="weight">0.5</td>
+						<td class="value">15</td>
+						<td class="obtaining">spriggan</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">thistle branch</td>
+						<td class="effect1">resist frost</td>
+						<td class="effect2">ravage stamina</td>
+						<td class="effect3">resist poison</td>
+						<td class="effect4">fortify heavy armor</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">thistle plant</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">torchbug thorax</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">lingering damage magicka</td>
+						<td class="effect3">weakness to magic</td>
+						<td class="effect4">fortify stamina</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">torchbugs, glowing at night</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">trama root</td>
+						<td class="effect1">weakness to shock</td>
+						<td class="effect2">fortify carry weight</td>
+						<td class="effect3">damage magicka</td>
+						<td class="effect4">slow</td>
+						<td class="weight">0.2</td>
+						<td class="value">1</td>
+						<td class="obtaining">harvested from ashen areas of solstheim</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">troll fat</td>
+						<td class="effect1">resist poison</td>
+						<td class="effect2">fortify two-handed</td>
+						<td class="effect3">frenzy</td>
+						<td class="effect4">damage health</td>
+						<td class="weight">1</td>
+						<td class="value">15</td>
+						<td class="obtaining">trolls</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">tundra cotton</td>
+						<td class="effect1">resist magic</td>
+						<td class="effect2">fortify magicka</td>
+						<td class="effect3">fortify block</td>
+						<td class="effect4">fortify barter</td>
+						<td class="weight">0.1</td>
+						<td class="value">1</td>
+						<td class="obtaining">high mountains below snow line, tundra</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">vampire dust</td>
+						<td class="effect1">invisibility</td>
+						<td class="effect2">restore magicka</td>
+						<td class="effect3">regenerate health</td>
+						<td class="effect4">cure disease</td>
+						<td class="weight">0.2</td>
+						<td class="value">25</td>
+						<td class="obtaining">vampires, the silver hand</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">void salts</td>
+						<td class="effect1">weakness to shock</td>
+						<td class="effect2">resist magic</td>
+						<td class="effect3">damage health</td>
+						<td class="effect4">fortify magicka</td>
+						<td class="weight">0.2</td>
+						<td class="value">125</td>
+						<td class="obtaining">storm atronach</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">wheat</td>
+						<td class="effect1">restore health</td>
+						<td class="effect2">fortify health</td>
+						<td class="effect3">damage stamina regen</td>
+						<td class="effect4">lingering damage magicka</td>
+						<td class="weight">0.1</td>
+						<td class="value">5</td>
+						<td class="obtaining">grows on farms, containers</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">white cap</td>
+						<td class="effect1">weakness to frost</td>
+						<td class="effect2">fortify heavy armor</td>
+						<td class="effect3">restore magicka</td>
+						<td class="effect4">ravage magicka</td>
+						<td class="weight">0.3</td>
+						<td class="value">0</td>
+						<td class="obtaining">mushroom clusters near caves or dungeons</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">wisp wrappings</td>
+						<td class="effect1">restore stamina</td>
+						<td class="effect2">fortify destruction</td>
+						<td class="effect3">fortify carry weight</td>
+						<td class="effect4">resist magic</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">wispmother</td>
+					</tr>
+					<tr>
+						<td class="ingredientname">yellow mountain flower</td>
+						<td class="effect1">resist poison</td>
+						<td class="effect2">fortify restoration</td>
+						<td class="effect3">fortify health</td>
+						<td class="effect4">damage stamina regen</td>
+						<td class="weight">0.1</td>
+						<td class="value">2</td>
+						<td class="obtaining">darkfall cave</td>
+					</tr>
+				</tbody>
+				<tfoot></tfoot>
+			</table>
+		</div>
+	</body>
 </html>
