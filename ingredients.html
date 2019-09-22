@@ -19,6 +19,10 @@ th {
   background-color: #feca1e;
   color: #1a1a1a;
 }
+.highlight2 {
+  background-color: #de1e4e;
+  color: #1a1a1a;
+}
   </style>
 <script>
   function filter() {
@@ -36,6 +40,7 @@ th {
       for (j = 0; j < td.length; j++) {
         if (td[j]) {
           td[j].classList.remove("highlight");
+          td[j].classList.remove("highlight2");
           txtValue = td[j].textContent || td[j].innerText;
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
             tr[i].style.display = "";
@@ -44,8 +49,39 @@ th {
             }
             k = false;
           } else if (k) {
-            tr[i].style.display = "none";
+            //if (!td[j].classList.contains("highlight2") && !td[j].classList.contains("highlight")) {
+	      tr[i].style.display = "none";
+	    //}
             td[j].classList.remove("highlight");
+          }
+        }
+      }
+    }
+  }
+  function filter2() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("filterInp2");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("alchemy");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td");
+      k = true;
+      for (j = 0; j < td.length; j++) {
+        if (td[j]) {
+          td[j].classList.remove("highlight2");
+          txtValue = td[j].textContent || td[j].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+            if (filter.length > 0 && filter != "") {
+              td[j].classList.add("highlight2");
+            }
+            k = false;
+          } else if (k) {
+            td[j].classList.remove("highlight2");
           }
         }
       }
@@ -56,6 +92,7 @@ th {
 <body>
 <div id="ingredients">
   <input class="search" id="filterInp" placeholder="filter" onkeyup="filter()" />
+  <input class="search" id="filterInp2" placeholder="secondary filter" onkeyup="filter2()" />
   <table id="alchemy" cellpadding="8pt">
     <thead>
       <tr>
