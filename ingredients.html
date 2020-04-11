@@ -23,56 +23,78 @@ th {
 	background-color: #de1e4e;
 	color: #1a1a1a;
 }
+.highlight3 {
+	background-color: #1ce;
+	color: #1a1a1a;
+}
 		</style>
 		<script>
-			function filter() {
-				// Declare variables
-				var input, filter, table, tr, td, i, txtValue;
-				input = document.getElementById("filterInp");
-				input2 = document.getElementById("filterInp2");
-				filter = input.value.toUpperCase();
-				filter2 = input2.value.toUpperCase();
-				table = document.getElementById("alchemy");
-				tr = table.getElementsByTagName("tr");
+function filter() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("filterInp");
+  input2 = document.getElementById("filterInp2");
+  input3 = document.getElementById("filterInp3");
+  filter = input.value.toUpperCase();
+  filter2 = input2.value.toUpperCase();
+  filter3 = input3.value.toUpperCase();
+  table = document.getElementById("alchemy");
+  tr = table.getElementsByTagName("tr");
 
-				// Loop through all table rows, and hide those who don't match the search query
-				for (i = 0; i < tr.length; i++) {
-					td = tr[i].getElementsByTagName("td");
-					k = true;
-					for (j = 0; j < td.length; j++) {
-						if (td[j]) {
-							td[j].classList.remove("highlight");
-							td[j].classList.remove("highlight2");
-							txtValue = td[j].textContent || td[j].innerText;
-							if (txtValue.toUpperCase().includes(filter)
-								|| (filter2.length > 0 && filter2 != "" && txtValue.toUpperCase().includes(filter2))) {
-								tr[i].style.display = "";
-								if (txtValue.toUpperCase().indexOf(filter) > -1) {
-									if (filter.length > 0 && filter != "") {
-										td[j].classList.add("highlight");
-									}
-								}
-								if (txtValue.toUpperCase().indexOf(filter2) > -1) {
-									if (filter2.length > 0 && filter2 != "") {
-										td[j].classList.add("highlight2");
-									}
-								}
-								k = false;
-							} else if (k) {
-								tr[i].style.display = "none";
-								td[j].classList.remove("highlight");
-								td[j].classList.remove("highlight2");
-							}
-						}
-					}
-				}
-			}
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td");
+    y = true;
+    for (j = 0; j < td.length; j++) {
+      if (td[j]) {
+        td[j].classList.remove("highlight");
+        td[j].classList.remove("highlight2");
+        td[j].classList.remove("highlight3");
+        txtValue = td[j].textContent || td[j].innerText;
+        if (
+          txtValue.toUpperCase().includes(filter) ||
+          (filter2.length > 0 &&
+            filter2 != "" &&
+            txtValue.toUpperCase().includes(filter2)) ||
+          (filter3.length > 0 &&
+            filter3 != "" &&
+            txtValue.toUpperCase().includes(filter3))
+        ) {
+          tr[i].style.display = "";
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            if (filter.length > 0 && filter != "") {
+              td[j].classList.add("highlight");
+            }
+          }
+          if (txtValue.toUpperCase().indexOf(filter2) > -1) {
+            if (filter2.length > 0 && filter2 != "") {
+              td[j].classList.add("highlight2");
+            }
+          }
+          if (txtValue.toUpperCase().indexOf(filter3) > -1) {
+            if (filter3.length > 0 && filter3 != "") {
+              td[j].classList.add("highlight3");
+            }
+          }
+          y = false;
+        } else if (y) {
+          tr[i].style.display = "none";
+          td[j].classList.remove("highlight");
+          td[j].classList.remove("highlight2");
+          td[j].classList.remove("highlight3");
+        }
+      }
+    }
+  }
+}
+
 		</script>
 	</head>
 	<body>
 		<div id="ingredients">
-			<input class="search" id="filterInp" placeholder="filter" onkeyup="filter()" />
+			<input class="search" id="filterInp" placeholder="primary filter" onkeyup="filter()" />
 			<input class="search" id="filterInp2" placeholder="secondary filter" onkeyup="filter()" />
+			<input class="search" id="filterInp3" placeholder="tertiary filter" onkeyup="filter()" />
 			<table id="alchemy" cellpadding="8pt">
 				<thead>
 					<tr>
@@ -111,7 +133,7 @@ th {
 						<td class="effect4">fortify restoration</td>
 						<td class="weight">0.5</td>
 						<td class="value">15</td>
-						<td id="coral" class="obtaining">lakes, rivers, streams, fish barrels</td>
+						<td class="obtaining">lakes, rivers, streams, fish barrels</td>
 					</tr>
 					<tr>
 						<td class="ingredientname">ancestor moth wing</td>
