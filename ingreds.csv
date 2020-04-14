@@ -1,0 +1,112 @@
+|ingredient|primary effect|secondary effect|tertiary effect|quaternary effect|weight|value|obtained|prevalence|
+|abecean longfin|weakness to frost|fortify sneak|weakness to poison|fortify restoration|0.5|15|lakes, rivers, streams, fish barrels|common|
+|ancestor moth wing|damage stamina|fortify conjuration|damage magicka regen|fortify enchanting|0.1|2|ancestor glade|common at later level|
+|ash creep cluster|damage stamina|invisibility|resist fire|fortify destruction|0.3|20|harvested from ash covered areas of solstheim|common at later level|
+|ash hopper jelly|restore health|fortify light armor|resist shock|weakness to frost|0.3|20|ash hopper corpses|common at later level|
+|ashen grass pod|resist fire|weakness to shock|fortify lockpicking|fortify sneak|0.1|1|harvested from ash covered areas of solstheim|common at later level|
+|bear claws|restore stamina|fortify health|fortify one-handed|damage magicka regen|0.1|2|bears|common|
+|bee|restore stamina|ravage stamina|regenerate stamina|weakness to shock|0.1|3|beehive|common|
+|beehive husk|resist poison|fortify light armor|fortify sneak|fortify destruction|1|5|beehive|uncommon|
+|berit's ashes|damage stamina|resist fire|fortify conjuration|ravage stamina|0.5|5|quest item given by thadgeir|unique|
+|bleeding crown|weakness to fire|fortify block|weakness to poison|resist magic|0.3|10|mushroom clusters|common|
+|blisterwort|damage stamina|frenzy|restore health|fortify smithing|0.2|12|caves and dark areas|common|
+|blue butterfly wing|damage stamina|fortify conjuration|damage magicka regen|fortify enchanting|0.1|2|blue butterfly|common|
+|blue dartwing|resist shock|fortify pickpocket|restore health|fear|0.1|1|hovering above water|common|
+|blue mountain flower|restore health|fortify conjuration|fortify health|damage magicka regen|0.1|2|mountain flower clumps|common|
+|boar tusk|fortify stamina|fortify health|fortify block|frenzy|0.5|20|tusked bristlebacks|common at later level|
+|bone meal|damage stamina|resist fire|fortify conjuration|ravage stamina|0.5|5|draugr and skeletons|common|
+|briar heart|restore magicka|fortify block|paralysis|fortify magicka|0.5|20|forsworn leaders|uncommon|
+|burnt spriggan wood|weakness to fire|fortify alteration|damage magicka regen|slow|0.5|20|burnt spriggans|uncommon at later level|
+|butterfly wing|restore health|fortify barter|lingering damage stamina|damage magicka|0.1|3|monarch butterfly|common|
+|canis root|damage stamina|fortify one-handed|fortify marksman|paralysis|0.1|5|near rocky areas|common|
+|charred skeever hide|restore stamina|cure disease|resist poison|restore health|0.5|1|found at campfires, silver hand|common|
+|chaurus eggs|weakness to poison|fortify stamina|damage magicka|invisibility|0.2|10|falmer caves|common|
+|chaurus hunter antennae|damage stamina|fortify conjuration|damage magicka regen|fortify enchanting|0.1|2|chaurus hunter, chaurus hunter fledgling|uncommon|
+|chicken's egg|resist magic|damage magicka regen|waterbreathing|lingering damage stamina|0.5|2|chicken's nest|common|
+|creep cluster|restore magicka|damage stamina regen|fortify carry weight|weakness to magic|0.2|1|hydro-thermal areas|common|
+|crimson nirnroot|damage health|damage stamina|invisibility|resist magic|0.2|10|blackreach|common at later level|
+|cyrodilic spadetail|damage stamina|fortify restoration|fear|ravage health|0.3|15|lakes, rivers, streams, fish barrels|common|
+|daedra heart|restore health|damage stamina regen|damage magicka|fear|0.5|250|daedra|rare|
+|deathbell|damage health|ravage stamina|slow|weakness to poison|0.1|4|wild, on planters|common|
+|dragon's tongue|resist fire|fortify barter|fortify illusion|fortify two-handed|0.1|5|hydro-thermal areas|common|
+|dwarven oil|weakness to magic|fortify illusion|regenerate magicka|restore magicka|0.3|15|dwemer ruins|common|
+|ectoplasm|restore magicka|fortify destruction|fortify magicka|damage health|0.1|25|ghostlike creatures|uncommon|
+|elves ear|restore magicka|fortify marksman|weakness to frost|resist fire|0.1|10|plant, hanging herbs|common|
+|emperor parasol moss|damage health|fortify magicka|regenerate health|fortify two-handed|0.3|1|hanging from emperor parasol around tel mithryn|common at later level|
+|eye of sabre cat|restore stamina|ravage health|damage magicka|restore health|0.1|2|sabre cat, snowy sabre cat|uncommon|
+|falmer ear|damage health|frenzy|resist poison|fortify lockpicking|0.2|10|falmer|common at later level|
+|felsaad tern feathers|restore health|fortify light armor|cure disease|resist magic|0.1|15|felsaad tern|uncommon at later level|
+|fire salts|weakness to frost|resist fire|restore magicka|regenerate magicka|0.3|50|flame atronach|uncommon|
+|fly amanita|resist fire|fortify two-handed|frenzy|regenerate stamina|0.1|2|mushroom clusters in and around caves|common|
+|frost mirriam|resist frost|fortify sneak|ravage magicka|damage stamina regen|0.1|1|hanging in homes, businesses and giant camps|common|
+|frost salts|weakness to fire|resist frost|restore magicka|fortify conjuration|0.3|100|frost atronach|uncommon|
+|garlic|resist poison|fortify stamina|regenerate magicka|regenerate health|0.3|1|hanging in homes, businesses and cooking areas|common|
+|giant lichen|weakness to shock|ravage health|weakness to poison|restore magicka|0.3|5|swamps|common|
+|giant's toe|damage stamina|fortify health|fortify carry weight|damage stamina regen|1|20|giants|rare|
+|gleamblossom|resist magic|fear|regenerate health|paralysis|0.1|5|harvested in darkfall cave, forgotten vale|common at later level|
+|glow dust|damage magicka|damage magicka regen|fortify destruction|resist shock|0.5|20|wispmother|uncommon|
+|glowing mushroom|resist shock|fortify destruction|fortify smithing|fortify health|0.2|5|caves, dwemer ruins|common|
+|grass pod|resist poison|ravage magicka|fortify alteration|restore magicka|0.1|1|tundras|common|
+|hagraven claw|resist magic|lingering damage magicka|fortify enchanting|fortify barter|0.3|20|hagraven|uncommon|
+|hagraven feathers|damage magicka|fortify conjuration|frenzy|weakness to shock|0.1|20|hagraven|uncommon|
+|hanging moss|damage magicka|fortify health|damage magicka regen|fortify one-handed|0.3|1|vegetated areas, hanging in caves, from buildings|common|
+|hawk beak|restore stamina|resist frost|fortify carry weight|resist shock|0.3|15|hawks|uncommon|
+|hawk feathers|cure disease|fortify light armor|fortify one-handed|fortify sneak|0.1|15|hawks, silver hand|common|
+|hawk's egg|resist magic|damage magicka regen|waterbreathing|lingering damage stamina|0.5|2|hawk's nest|rare|
+|histcarp|restore stamina|fortify magicka|damage stamina regen|waterbreathing|0.3|6|lakes, rivers, streams and fish barrels|common|
+|honeycomb|restore stamina|fortify block|fortify light armor|ravage stamina|1|5|beehive|uncommon|
+|human flesh|damage health|paralysis|restore magicka|fortify sneak|0.3|1|falmer/vampire dens|uncommon at later level|
+|human heart|damage health|damage magicka|damage magicka regen|frenzy|1|0|falmer/vampire dens|uncommon at later level|
+|ice wraith teeth|weakness to frost|fortify heavy armor|invisibility|weakness to fire|0.3|30|ice wraith|uncommon|
+|imp stool|damage health|lingering damage health|paralysis|restore health|0.3|0|mushroom clusters near caves or dungeons|common|
+|jarrin root|damage health|damage magicka|damage stamina|damage magicka regen|0.5|10|dark brotherhood quest|unique|
+|jazbay grapes|weakness to magic|fortify magicka|regenerate magicka|ravage health|0.2|1|hydro-thermal regions|common|
+|juniper berries|weakness to fire|fortify marksman|regenerate health|damage stamina regen|0.1|1|juniper trees|common|
+|large antlers|restore stamina|fortify stamina|slow|damage stamina regen|0.1|2|deer, elk|uncommon|
+|lavender|resist magic|fortify stamina|ravage magicka|fortify conjuration|0.1|1|outdoors in clumps|common|
+|luna moth wing|damage magicka|fortify light armor|regenerate health|invisibility|0.1|5|luna moth|common|
+|moon sugar|weakness to fire|resist frost|restore magicka|regenerate magicka|0.3|50|khajiit caravans|uncommon|
+|mora tapinella|restore magicka|lingering damage health|regenerate stamina|fortify illusion|0.3|4|dead trees|common|
+|mudcrab chitin|restore stamina|cure disease|resist poison|resist fire|0.3|2|mudcrabs|common|
+|namira's rot|damage magicka|fortify lockpicking|fear|regenerate health|0.3|0|caves|common|
+|netch jelly|paralysis|fortify carry weight|restore stamina|fear|0.5|20|netch|uncommon at later level|
+|nightshade|damage health|damage magicka regen|lingering damage stamina|fortify destruction|0.1|8|graveyards, undead areas|common|
+|nirnroot|damage health|damage stamina|invisibility|resist magic|0.2|10|near water|uncommon|
+|nordic barnacle|damage magicka|waterbreathing|regenerate health|fortify pickpocket|0.2|5|underwater|common|
+|orange dartwing|restore stamina|ravage magicka|fortify pickpocket|lingering damage health|0.1|1|hovering above water|common|
+|pearl|restore stamina|fortify block|restore magicka|resist shock|0.1|2|satchels; alchemy laboratory of a homestead † pearl oyster|uncommon at later level|
+|pine thrush egg|restore stamina|fortify lockpicking|weakness to poison|resist shock|0.5|2|nests in forests|common|
+|poison bloom|damage health|slow|fortify carry weight|fear|0.3|5|darkfall cave|common at later level|
+|powdered mammoth tusk|restore stamina|fortify sneak|weakness to fire|fear|0.1|2|giant camps, alchemy laboratory of a homestead†|rare|
+|purple mountain flower|restore stamina|fortify sneak|lingering damage magicka|resist frost|0.1|2|mountain flower clumps|common|
+|red mountain flower|restore magicka|ravage magicka|fortify magicka|damage health|0.1|2|mountain flower clumps|common|
+|river betty|damage health|fortify alteration|slow|fortify carry weight|0.3|15|lakes, rivers, streams and fish barrels|common|
+|rock warbler egg|restore health|fortify one-handed|damage stamina|weakness to magic|0.5|2|rock warbler nest|common|
+|sabre cat tooth|restore stamina|fortify heavy armor|fortify smithing|weakness to poison|0.1|2|sabre cat, snowy sabre cat|uncommon|
+|salmon roe|restore stamina|waterbreathing|fortify magicka|regenerate magicka|0.2|5|salmon jumping up falls, kitchen of a homestead†|rare|
+|salt pile|weakness to magic|fortify restoration|slow|regenerate magicka|0.2|2|merchants, containers, near cooking places|common|
+|scaly pholiota|weakness to magic|fortify illusion|regenerate stamina|fortify carry weight|0.3|4|dead birch trees|common|
+|scathecraw|ravage health|ravage stamina|ravage magicka|lingering damage health|0.1|1|harvested all over solstheim|common at later level|
+|silverside perch|restore stamina|damage stamina regen|ravage health|resist frost|0.3|15|lakes, rivers, streams and fish barrels|common|
+|skeever tail|damage stamina regen|ravage health|damage health|fortify light armor|0.2|3|skeever|common|
+|slaughterfish egg|resist poison|fortify pickpocket|lingering damage health|fortify stamina|0.2|3|underwater|uncommon|
+|slaughterfish scales|resist frost|lingering damage health|fortify heavy armor|fortify block|0.1|3|slaughterfish|uncommon|
+|small antlers|weakness to poison|fortify restoration|lingering damage stamina|damage health|0.1|2|elk|uncommon|
+|small pearl|restore stamina|fortify one-handed|fortify restoration|resist frost|0.1|2|pearl oyster|rare|
+|snowberries|resist fire|fortify enchanting|resist frost|resist shock|0.1|4|snowberry bush, snowy areas|common|
+|spawn ash|ravage stamina|resist fire|fortify enchanting|ravage magicka|0.1|20|ash spawn|uncommon at later level|
+|spider egg|damage stamina|damage magicka regen|fortify lockpicking|fortify marksman|0.2|5|spider lairs|common|
+|spriggan sap|damage magicka regen|fortify enchanting|fortify smithing|fortify alteration|0.2|15|spriggan|uncommon|
+|swamp fungal pod|resist shock|lingering damage magicka|paralysis|restore health|0.3|5|swamps|common|
+|taproot|weakness to magic|fortify illusion|regenerate magicka|restore magicka|0.5|15|spriggan|uncommon at later level|
+|thistle branch|resist frost|ravage stamina|resist poison|fortify heavy armor|0.1|1|thistle plant|common|
+|torchbug thorax|restore stamina|lingering damage magicka|weakness to magic|fortify stamina|0.1|1|torchbugs, glowing at night|common|
+|trama root|weakness to shock|fortify carry weight|damage magicka|slow|0.2|1|harvested from ashen areas of solstheim|common at later level|
+|troll fat|resist poison|fortify two-handed|frenzy|damage health|1|15|trolls|uncommon|
+|tundra cotton|resist magic|fortify magicka|fortify block|fortify barter|0.1|1|high mountains below snow line, tundra|common|
+|vampire dust|invisibility|restore magicka|regenerate health|cure disease|0.2|25|vampires, the silver hand|uncommon|
+|void salts|weakness to shock|resist magic|damage health|fortify magicka|0.2|125|storm atronach|uncommon|
+|wheat|restore health|fortify health|damage stamina regen|lingering damage magicka|0.1|5|grows on farms, containers|common|
+|white cap|weakness to frost|fortify heavy armor|restore magicka|ravage magicka|0.3|0|mushroom clusters near caves or dungeons|common|
+|wisp wrappings|restore stamina|fortify destruction|fortify carry weight|resist magic|0.1|2|wispmother|rare|
+|yellow mountain flower|resist poison|fortify restoration|fortify health|damage stamina regen|0.1|2|darkfall cave|uncommon at later level|
