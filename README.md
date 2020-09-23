@@ -1,6 +1,6 @@
 # skyrim alchemy cheat sheet (codenamed: tamriel)
 crash course cheat sheet for alchemy in skyrim:
-https://th3geekguy.github.io/tamriel/
+https://penumbrabrah.github.io/tamriel/
 
 ## ingredient list
 includes all ingredients from vanilla and dlc with the associated effects and how to obtain
